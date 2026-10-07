@@ -72,6 +72,7 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->name('ad
 
     Route::get('/expenses', [AdminExpense::class, 'index'])->name('expenses.index');
     Route::post('/expenses', [AdminExpense::class, 'store'])->name('expenses.store');
+    Route::post('/expenses/categories', [AdminExpense::class, 'storeCategory'])->name('expenses.categories.store');
     Route::delete('/expenses/{expense}', [AdminExpense::class, 'destroy'])->name('expenses.destroy');
 
     Route::get('/reports', [AdminReport::class, 'index'])->name('reports.index');
